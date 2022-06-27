@@ -3,10 +3,6 @@ using UnityEngine.AI;
 
 public class CarPatrol : MonoBehaviour {
 
-    [Header("Braking Zones (Box Collider)")] // Assign braking zones through the inspector
-    public BoxCollider Zone1;
-    public BoxCollider Zone2;
-
     [Header("Car Wheels (Transform)")] // Assign wheels through the inspector
     public Transform WheelBL;
     public Transform WheelBR;
@@ -43,7 +39,7 @@ public class CarPatrol : MonoBehaviour {
         WheelFL.transform.Rotate(10f, 0f, 0f, Space.Self);
         WheelFR.transform.Rotate(10f, 0f, 0f, Space.Self);
     }
-
-    private void ToggleAutoBrake() {
-    }
+    
+    private void OnTriggerEnter(Collider other) {Agent.speed = 5;}    
+    private void OnTriggerExit(Collider other) {Agent.speed = 15;}   
 }

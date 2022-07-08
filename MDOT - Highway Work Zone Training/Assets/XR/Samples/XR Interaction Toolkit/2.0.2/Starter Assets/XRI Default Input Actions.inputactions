@@ -1075,41 +1075,23 @@
             ]
         },
         {
-            "name": "XRI Custom Right",
-            "id": "3147f512-4462-418d-9d87-f29bc4f414c4",
+            "name": "Custom Actions",
+            "id": "2198639e-67e1-4cd6-b0ac-6c22df90ce7f",
             "actions": [
                 {
-                    "name": "Position",
-                    "type": "Value",
-                    "id": "b31a17f0-5c20-4125-8b89-9a2d89de77fb",
-                    "expectedControlType": "Vector3",
+                    "name": "Activate",
+                    "type": "Button",
+                    "id": "6c07e020-464c-4f6d-ab97-51d388190093",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
-                    "name": "Rotation",
-                    "type": "Value",
-                    "id": "ed1bc24f-32b5-420c-82e8-8e832a9f1571",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Tracking State",
-                    "type": "Value",
-                    "id": "da156caf-82e6-4980-939e-63b4d1324f52",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Haptic Device",
-                    "type": "PassThrough",
-                    "id": "50cd8f4b-38a0-45be-8fcf-b7a8e70b0c1d",
-                    "expectedControlType": "",
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "722cbcb8-c597-494b-8efe-7a04790d45b3",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -1117,7 +1099,7 @@
                 {
                     "name": "Toggle",
                     "type": "Button",
-                    "id": "57bc53da-d028-4d73-bc59-94b6e83d795f",
+                    "id": "1239d67e-4a2c-43a6-8214-c4ea2678ab25",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1126,292 +1108,30 @@
             ],
             "bindings": [
                 {
-                    "name": "Vector 3 Fallback",
-                    "id": "940c8f7c-5118-46bf-a8ec-99f8cd8462dd",
-                    "path": "Vector3Fallback",
+                    "name": "",
+                    "id": "dfdf1f34-0d50-40e2-bf45-30de49669e18",
+                    "path": "<ViveController>/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Position",
-                    "isComposite": true,
+                    "action": "Activate",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "first",
-                    "id": "ec67eb54-e16a-46c0-9c22-787dfe361ed1",
-                    "path": "<XRController>{RightHand}/pointerPosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "second",
-                    "id": "3ebaa490-7da3-458b-a1fe-5ff8a7907a67",
-                    "path": "<XRController>{RightHand}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "third",
-                    "id": "f9e1060f-e587-4b8f-a62b-9bddec2d51aa",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Quaternion Fallback",
-                    "id": "638fafc3-1b2b-456e-8ef4-d441a7d784c6",
-                    "path": "QuaternionFallback",
+                    "name": "",
+                    "id": "925b541d-84a4-409c-8fb0-c4ec688b5432",
+                    "path": "<ViveController>/gripPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotation",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "first",
-                    "id": "0cef5bb0-ea4f-4878-ab66-9b3f28ce51e5",
-                    "path": "<XRController>{RightHand}/pointerRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "second",
-                    "id": "3337b818-45b6-453a-b0d5-fffa0b0b75e9",
-                    "path": "<XRController>{RightHand}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "third",
-                    "id": "1a856e26-3d71-4a4f-bc77-ac21a45fea37",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "5e1439e0-8052-4992-b522-03b75a52ec81",
-                    "path": "<XRController>{RightHand}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Tracking State",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3d6350ef-0873-4899-9c15-c18a7686b1dc",
-                    "path": "<XRController>{RightHand}/*",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Haptic Device",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4775e8c7-bec9-4412-a725-5db90f8d750a",
-                    "path": "<ViveController>/menu",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Toggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "XRI Custom Left",
-            "id": "dd8563b6-4e50-4048-a722-320c8f1fbb08",
-            "actions": [
-                {
-                    "name": "Position",
-                    "type": "Value",
-                    "id": "89fbb664-3490-47ad-aa7c-27affff30e7d",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Rotation",
-                    "type": "Value",
-                    "id": "078a9895-ae18-467c-aa69-5e9b9e495463",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Tracking State",
-                    "type": "Value",
-                    "id": "d8178ec9-1d0e-4de8-a95a-05d0461d6f7e",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Haptic Device",
-                    "type": "PassThrough",
-                    "id": "c0056c40-4780-44c2-98d2-30cc656f5b74",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Toggle",
-                    "type": "Button",
-                    "id": "cae9873a-8a20-45ce-8dcf-7fd18bbc6101",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "Vector 3 Fallback",
-                    "id": "623cfa9d-4625-42c0-8f27-57d5e69f548c",
-                    "path": "Vector3Fallback",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Position",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "first",
-                    "id": "97d140e1-aaf9-4125-b016-8a7eafb126a9",
-                    "path": "<XRController>{LeftHand}/pointerPosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "second",
-                    "id": "c7fd8539-7b5c-4757-a40b-2d9230df250a",
-                    "path": "<XRController>{LeftHand}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "third",
-                    "id": "b917c05f-ba44-4583-8e5f-134aa3ba6f00",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Quaternion Fallback",
-                    "id": "abb6c89e-eb15-411e-a30f-87f563f2bbc3",
-                    "path": "QuaternionFallback",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "first",
-                    "id": "445f1801-3d37-4fa0-a664-c2c42bf7c29e",
-                    "path": "<XRController>{LeftHand}/pointerRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "second",
-                    "id": "b8a6a04d-e3f0-45ae-9b12-1897aa5eebc3",
-                    "path": "<XRController>{LeftHand}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "third",
-                    "id": "ca5493e7-b803-4482-b9ec-2aa3f4d2ebe8",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "d67a7d63-b606-40fa-905b-11e9d671bdc6",
-                    "path": "<XRController>{LeftHand}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Tracking State",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "86706a2d-2833-4036-a3d7-3930de934d01",
-                    "path": "<XRController>{LeftHand}/*",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "Haptic Device",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8f6295d1-7722-499c-9f8a-5b42783437f7",
+                    "id": "58d50e09-ef85-4110-94e4-07d25e2ab728",
                     "path": "<ViveController>/menu",
                     "interactions": "",
                     "processors": "",

@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 
 public class ControllerTutorial : MonoBehaviour
 {
+    private int ToggleCounter = 0, ActiveCounter = 0;
     public Image Image;
     public Sprite SelectImage, MenuImage;
-    public AudioSource MenuEnter, SelectClip, PracticeSuccess;
-    public GameObject Text1, Text2, PracticeScene, NextButton, MenuCanvas, IntroductionScene, DestinationPoint;
-    public InputActionReference activeReference = null, selectReference = null, toggleReference = null;
+    public AudioSource MenuEnter, MenuExit, SelectClip;
+    public GameObject Text1, Text2, NextButton, MenuCanvas, DestinationPoint;
+    public InputActionReference activeReference = null, toggleReference = null;
 
     private void Awake() {
         activeReference.action.started += Active;
@@ -17,41 +18,28 @@ public class ControllerTutorial : MonoBehaviour
 
     private void OnDestroy() {
         activeReference.action.started -= Active;
-        selectReference.action.started -= Select;
         toggleReference.action.started -= Toggle;
     }
 
-    public void DestroyScene(GameObject context)
-    {
-        Destroy(context);
-    }
-
-    private void Active(InputAction.CallbackContext context) {
-        MenuEnter.Play();
+    private void Active(InputAction.CallbackContext context) { // Triggered by pressing 'Trigger'. Introduces the menu button to user. 
+        if (ActiveCounter == 0) { MenuEnter.Play(); }
         Destroy(NextButton);
         Image.sprite = MenuImage;
         toggleReference.action.started += Toggle;
         Text1.GetComponent<TextMeshProUGUI>().text = "\n\n Press 'Menu' to continue";
         Text2.GetComponent<TextMeshProUGUI>().text = "\n You can use the 'Menu' button to look at your progress.";
+        ActiveCounter++;
     }
 
-    private void Select(InputAction.CallbackContext context)
-    {
-        /*
-        PracticeSuccess.Play();
-        MenuCanvas.GetComponent<AudioSource>().enabled = false;
-        IntroductionScene.GetComponent<IntroductionScript>().enabled = true;
-        Destroy(PracticeScene);
-        */
-    }
-    private void Toggle(InputAction.CallbackContext context) {
+    private void Toggle(InputAction.CallbackContext context) { // Triggered by pressing 'Menu'. Introduces the select button to user. 
         if (!MenuCanvas.activeSelf) { 
             SelectClip.Play();
             DestinationPoint.SetActive(true);
         }
+        if (ToggleCounter == 0) { MenuExit.Play(); }
         Image.sprite = SelectImage;
-        selectReference.action.started += Select;
-        Text1.GetComponent<TextMeshProUGUI>().text = "\n\n Press 'Select' to continue";
+        Text1.GetComponent<TextMeshProUGUI>().text = "\n\n Aim at the teleportation point and press 'Select' to continue";
         Text2.GetComponent<TextMeshProUGUI>().text = "\n You can use the 'Select' button to grab objects and teleport.";
+        ToggleCounter++;
     }
 }

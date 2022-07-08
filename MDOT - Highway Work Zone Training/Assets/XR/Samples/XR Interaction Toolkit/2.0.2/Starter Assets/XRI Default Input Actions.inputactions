@@ -1076,12 +1076,12 @@
         },
         {
             "name": "Custom Actions",
-            "id": "2198639e-67e1-4cd6-b0ac-6c22df90ce7f",
+            "id": "47129efa-8c2c-4a18-b253-9bb876f26038",
             "actions": [
                 {
-                    "name": "Activate",
+                    "name": "Active",
                     "type": "Button",
-                    "id": "6c07e020-464c-4f6d-ab97-51d388190093",
+                    "id": "fc7147e8-cd15-482f-8e48-5914f7f5c923",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1090,7 +1090,7 @@
                 {
                     "name": "Select",
                     "type": "Button",
-                    "id": "722cbcb8-c597-494b-8efe-7a04790d45b3",
+                    "id": "18c2d355-633d-45f7-b6ad-3c505dccc1a3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1099,7 +1099,7 @@
                 {
                     "name": "Toggle",
                     "type": "Button",
-                    "id": "1239d67e-4a2c-43a6-8214-c4ea2678ab25",
+                    "id": "5eeedc51-4191-44b3-a8cc-873ff254dfb0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1109,18 +1109,18 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "dfdf1f34-0d50-40e2-bf45-30de49669e18",
+                    "id": "20dddd01-0a23-4771-b092-8420713a34c4",
                     "path": "<ViveController>/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Activate",
+                    "action": "Active",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "925b541d-84a4-409c-8fb0-c4ec688b5432",
+                    "id": "9b3ebdab-34bb-4897-a99b-440ed5dfb2c5",
                     "path": "<ViveController>/gripPressed",
                     "interactions": "",
                     "processors": "",
@@ -1131,7 +1131,7 @@
                 },
                 {
                     "name": "",
-                    "id": "58d50e09-ef85-4110-94e4-07d25e2ab728",
+                    "id": "0fbd0a4b-2f98-48fb-865d-6aee867aa8ee",
                     "path": "<ViveController>/menu",
                     "interactions": "",
                     "processors": "",

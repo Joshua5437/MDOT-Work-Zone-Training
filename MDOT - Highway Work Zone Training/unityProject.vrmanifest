@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.mdothighwayworkzonetraining.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\jic77\\Desktop\\Work Folder\\Projects\\MDOT-Work-Zone-Training\\MDOT - Highway Work Zone Training\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "MDOT - Highway Work Zone Training [Testing]"
+        }
+      }
+    }
+  ]
+}

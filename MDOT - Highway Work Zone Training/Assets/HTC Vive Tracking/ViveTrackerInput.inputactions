@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "Waist Tracker",
-            "id": "ac9e4e97-abbc-43d9-ba6f-56c38f61da6c",
+            "id": "18ec2ec4-cf75-4579-87f8-c586d9045cb3",
             "actions": [
                 {
                     "name": "Position",
                     "type": "Value",
-                    "id": "ba29fe4c-1a74-4130-a441-f05053eeaccc",
+                    "id": "dfc3031c-aa92-4a5a-ba38-b585c95d7cc6",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +17,7 @@
                 {
                     "name": "Rotation",
                     "type": "Value",
-                    "id": "10000bcc-567d-477b-9f3a-36c989078ba5",
+                    "id": "07be0a04-0185-4a44-b46d-b8f50b8a1198",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
@@ -27,7 +27,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "6b61d398-f63c-41c9-a76f-4929decc335f",
+                    "id": "b9faea83-be73-46b8-b506-24a462383f58",
                     "path": "<XRViveTracker>{Waist}/devicePosition",
                     "interactions": "",
                     "processors": "",
@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "",
-                    "id": "2c533660-d013-4be6-8d87-c299d5106387",
+                    "id": "c580c9ab-a886-4b6d-bfe0-c7678e27c6fe",
                     "path": "<XRViveTracker>{Waist}/deviceRotation",
                     "interactions": "",
                     "processors": "",
@@ -51,12 +51,12 @@
         },
         {
             "name": "Left Foot Tracker",
-            "id": "7deeb5d6-4bf1-4c0d-9630-9ed733956d8a",
+            "id": "a0ac6b20-c5d5-40a7-9077-946bb1fdd5c9",
             "actions": [
                 {
                     "name": "Position",
                     "type": "Value",
-                    "id": "da464e40-34dd-46b9-9114-39c081159249",
+                    "id": "4b050766-d06d-4a7d-af35-1aa4fa3f9561",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -65,7 +65,7 @@
                 {
                     "name": "Rotation",
                     "type": "Value",
-                    "id": "9154d899-e5d9-4979-9496-47fafc12e127",
+                    "id": "4dc4ff53-8d48-425e-8c13-06e9ab1d2d63",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
@@ -75,7 +75,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "edf5760a-592d-4c17-9012-e2949a44ff14",
+                    "id": "46d3e02c-2317-4386-9933-a74384c08d55",
                     "path": "<XRViveTracker>{Left Foot}/devicePosition",
                     "interactions": "",
                     "processors": "",
@@ -86,7 +86,7 @@
                 },
                 {
                     "name": "",
-                    "id": "4979edf9-4bf3-41af-9c18-695f45c8466c",
+                    "id": "d095838c-0ed4-45b7-ae2b-978b2bc7f559",
                     "path": "<XRViveTracker>{Left Foot}/deviceRotation",
                     "interactions": "",
                     "processors": "",
@@ -99,12 +99,12 @@
         },
         {
             "name": "Right Foot Tracker",
-            "id": "0785c7a9-3b30-4356-8042-a28b8b1f3760",
+            "id": "2bdb3f64-fd1f-4ec8-8c92-670a72019da4",
             "actions": [
                 {
                     "name": "Position",
                     "type": "Value",
-                    "id": "d4b40d49-ade5-4c75-8be4-e1804f8aa499",
+                    "id": "f602ba14-5316-4a72-8442-8057361777d8",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -113,7 +113,7 @@
                 {
                     "name": "Rotation",
                     "type": "Value",
-                    "id": "2ad7a960-36d8-4874-8125-144757e7a329",
+                    "id": "737a0950-2d3b-4020-a6d0-14585df8f379",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
@@ -123,7 +123,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "8a9442b0-8b40-4b49-847b-f9277a4bd1a8",
+                    "id": "998c6a2d-76aa-4066-9bdf-28d621fd5634",
                     "path": "<XRViveTracker>{Right Foot}/devicePosition",
                     "interactions": "",
                     "processors": "",
@@ -134,7 +134,7 @@
                 },
                 {
                     "name": "",
-                    "id": "891cd9f1-8b6d-4359-9f95-1b2850c14040",
+                    "id": "065222d6-736e-4f49-a5b9-9cbd7ede1b7c",
                     "path": "<XRViveTracker>{Right Foot}/deviceRotation",
                     "interactions": "",
                     "processors": "",

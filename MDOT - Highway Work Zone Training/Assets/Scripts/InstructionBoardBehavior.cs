@@ -5,16 +5,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InstructionBoardBehavior : MonoBehaviour {
     private int count = 0;
-    private GameObject CinderBlockSnapZone;
-    private GameObject SlideButton, BendButton, LiftButton;
     private GameObject CurrentAudioClip, AudioClip1, AudioClip2, AudioClip3;
     public Image Image;
     public Sprite BendDown, LiftWithLegs, Done;
+    public GameObject CinderBlockSnapZone, SlideButton, BendButton, LiftButton;
 
     private void Start() {
-        SlideButton = GameObject.Find("Slide Button");
-        BendButton = GameObject.Find("Bend Button");
-        LiftButton = GameObject.Find("Lift Button");
         CurrentAudioClip = GameObject.Find("Voice Clip 3");
         AudioClip1 = GameObject.Find("Voice Clip 4");
         AudioClip2 = GameObject.Find("Voice Clip 5");
@@ -23,8 +19,9 @@ public class InstructionBoardBehavior : MonoBehaviour {
         SlideButton.SetActive(false);
         BendButton.SetActive(false);
         LiftButton.SetActive(false);
-        StartCoroutine(SetupWait());
     }
+
+    public void SetupWaitCall() { StartCoroutine(SetupWait()); }
 
     public void SetupTrigger() {StartCoroutine(AnalyzeMovementWait());}
 
@@ -42,11 +39,12 @@ public class InstructionBoardBehavior : MonoBehaviour {
         AudioClip2 = AudioClip3;
     }
 
-    private IEnumerator SetupWait() {
+    public IEnumerator SetupWait()
+    {
         yield return new WaitForSeconds(2);
-        Debug.Log("Setup Complete! ");
         SlideButton.GetComponent<Button>().onClick.Invoke();
-        CinderBlockSnapZone.GetComponent<XRSocketInteractor>().selectEntered.AddListener(raycastHit => AudioChange());
+        Debug.Log("Setup Complete! ");
+        // CinderBlockSnapZone.GetComponent<XRSocketInteractor>().selectEntered.AddListener(raycastHit => AudioChange());
     }
 
     private IEnumerator AnalyzeMovementWait() {

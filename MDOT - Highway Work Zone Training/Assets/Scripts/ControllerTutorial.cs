@@ -5,41 +5,49 @@ using UnityEngine.InputSystem;
 
 public class ControllerTutorial : MonoBehaviour
 {
-    private int ToggleCounter = 0, ActiveCounter = 0;
+    private int ToggleCounter = 0, ActiveCounter = 0, NowPlayVid = -1;
     public Image Image;
     public Sprite SelectImage, MenuImage;
-    public AudioSource MenuEnter, MenuExit, SelectClip;
-    public GameObject Text1, Text2, NextButton, MenuCanvas, DestinationPoint;
+    public UnityEngine.Video.VideoPlayer VideoPlayer;
+    public AudioSource MenuEnter, MenuExit, SelectClip, PracticeSuccess;
+    public GameObject Text1, Text2, NextButton, MenuCanvas, Interactable;
     public InputActionReference activeReference = null, toggleReference = null;
 
+    private void Update()
+    {
+        if (!PracticeSuccess.isPlaying && NowPlayVid == 0)
+        {
+            VideoPlayer.Play();
+            NowPlayVid = -1;
+        }
+    }
+
     private void Awake() {
-        activeReference.action.started += Active;
+        toggleReference.action.started += Toggle;
     }
 
     private void OnDestroy() {
-        activeReference.action.started -= Active;
         toggleReference.action.started -= Toggle;
     }
 
-    private void Active(InputAction.CallbackContext context) { // Triggered by pressing 'Trigger'. Introduces the menu button to user. 
-        if (ActiveCounter == 0) { MenuEnter.Play(); }
-        Destroy(NextButton);
-        Image.sprite = MenuImage;
-        toggleReference.action.started += Toggle;
-        Text1.GetComponent<TextMeshProUGUI>().text = "\n\n Press 'Menu' to continue";
-        Text2.GetComponent<TextMeshProUGUI>().text = "\n You can use the 'Menu' button to look at your progress.";
-        ActiveCounter++;
+    public void NowPlayVideo()
+    {
+        NowPlayVid = 0;
     }
 
     private void Toggle(InputAction.CallbackContext context) { // Triggered by pressing 'Menu'. Introduces the select button to user. 
-        if (!MenuCanvas.activeSelf) { 
+        if (ToggleCounter == 1) { 
             SelectClip.Play();
-            DestinationPoint.SetActive(true);
+            MenuExit.Stop();
+            Interactable.SetActive(true);
         }
-        if (ToggleCounter == 0) { MenuExit.Play(); }
+        if (ToggleCounter == 0) { 
+            MenuExit.Play();
+            MenuEnter.Stop();
+        }
         Image.sprite = SelectImage;
-        Text1.GetComponent<TextMeshProUGUI>().text = "\n\n Aim at the teleportation point and press 'Select' to continue";
-        Text2.GetComponent<TextMeshProUGUI>().text = "\n You can use the 'Select' button to grab objects and teleport.";
+        Text1.GetComponent<TextMeshProUGUI>().text = "Use grip your right controller to grab the sphere.";
+        Text2.GetComponent<TextMeshProUGUI>().text = "You can use the 'Select' button to grab objects.";
         ToggleCounter++;
     }
 }

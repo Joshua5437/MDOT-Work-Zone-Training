@@ -18,7 +18,7 @@ public class BodyMovementVerification : MonoBehaviour
 
     void Update()
     {
-        if(!(CinderBlock.transform.position.y >= 0.97 && CinderBlock.transform.position.y <= 0.99) && Slide_Check) {
+        if(!(CinderBlock.transform.position.y >= 0.96 && CinderBlock.transform.position.y <= 1.00) && Slide_Check) {
             PostureFeedback(false);
             Success = false;
         }
@@ -35,8 +35,14 @@ public class BodyMovementVerification : MonoBehaviour
         return (float)(Start_Position + (Start_Position * .05));
     }
 
-    private float Lower_Margin_Calculator(float Start_Position) {
+    private float Lower_Margin_Calculator(float Start_Position)
+    {
         return (float)(Start_Position - (Start_Position * .05));
+    }
+
+    public void RemoveThisScript()
+    {
+        Destroy(this);
     }
 
     private void Set_Start_Pos(GameObject Tracker, char axis, char trackerName) {

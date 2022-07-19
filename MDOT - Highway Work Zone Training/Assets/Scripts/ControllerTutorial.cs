@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 
 public class ControllerTutorial : MonoBehaviour
 {
-    private int ToggleCounter = 0, ActiveCounter = 0, NowPlayVid = -1;
+    private int ToggleCounter = 0, ActiveCounter = 0, NowPlayVid = -1, BeginWaistScene = -1;
     public Image Image;
+    public Button ActivateWaistScene;
     public Sprite SelectImage, MenuImage;
     public UnityEngine.Video.VideoPlayer VideoPlayer;
     public AudioSource MenuEnter, MenuExit, SelectClip, PracticeSuccess;
@@ -19,6 +20,12 @@ public class ControllerTutorial : MonoBehaviour
         {
             VideoPlayer.Play();
             NowPlayVid = -1;
+            BeginWaistScene = 0;
+        }
+
+        if (!VideoPlayer.isPlaying && BeginWaistScene == 0)
+        {
+            ActivateWaistScene.onClick.Invoke();
         }
     }
 

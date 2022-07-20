@@ -5,17 +5,22 @@ using System.Globalization;
 
 public class FloorLiftVerification : MonoBehaviour
 {
-    public Image Check, Cross;
+    public Image Check, Cross, InstructionBoardImage;
     public float Duration = 1.0f;
+    public GameObject WaistTracker;
     public AudioSource Correct, Incorrect;
-    public GameObject WaistTracker, BendDownButton, LiftUpButton;
     private float W_Start_Pos_X = 0, W_Start_Pos_Y = 0, W_Start_Pos_Z = 0;
     private float W_Start_Rot_X = 0, W_Start_Rot_Y = 0, W_Start_Rot_Z = 0;
 
-    private void Start()
+    [Header("Instruction Board Sprite (Sprite)")] // Assign sprites to be displayed to the instruction board.
+    public Sprite LiftUp;
+
+    [Header("Instruction Board Buttons (Button)")] // Assign buttons from instruction board.
+    public Button BendDownButton;
+    public Button LiftUpButton;
+
+    private void OnEnable()
     {
-        LiftUpButton.SetActive(false);
-        BendDownButton.SetActive(false);
         Set_Start_Pos(WaistTracker, 'y', 'w'); Set_Start_Rot(WaistTracker, 'x', 'w');
         Debug.Log("Setup Complete! ");
         StartCoroutine(AnalyzeMovementWait());
@@ -29,6 +34,11 @@ public class FloorLiftVerification : MonoBehaviour
     private float Lower_Margin_Calculator(float Start_Position)
     {
         return (float)(Start_Position - (Start_Position * .05));
+    }
+
+    public void SpriteUpdater()
+    {
+        InstructionBoardImage.sprite = LiftUp;
     }
 
     private void Set_Start_Pos(GameObject Tracker, char axis, char trackerName)
@@ -111,12 +121,13 @@ public class FloorLiftVerification : MonoBehaviour
     private IEnumerator AnalyzeMovementWait()
     {
         yield return new WaitForSeconds(10);
-        BendDownButton.GetComponent<Button>().onClick.Invoke();
+        SpriteUpdater();
+        BendDownButton.onClick.Invoke(); // Checks if user has bent down.
         yield return new WaitForSeconds(10);
-        LiftUpButton.GetComponent<Button>().onClick.Invoke();
+        LiftUpButton.onClick.Invoke(); // Checks if user has lifted cone. 
     }
 
-    private IEnumerator DoFade(CanvasGroup canvGroup, float start, float end)
+    private IEnumerator DoFade(CanvasGroup canvGroup, float start, float end) // Displays correct/incorrect image to instructin board. 
     {
         float counter = 0f;
         while (counter < Duration)

@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class ControllerTutorial : MonoBehaviour
 {
-    private int ToggleCounter = 0, ActiveCounter = 0, NowPlayVid = -1, BeginWaistScene = -1;
+    private int ToggleCounter = 0, ActiveCounter = 0, NowPlayVid = -1, CallTeleportUser = -1;
     public Image Image;
+    public TeleportUser ScreenFade;
     public Button ActivateWaistScene;
     public Sprite SelectImage, MenuImage;
     public UnityEngine.Video.VideoPlayer VideoPlayer;
-    public AudioSource MenuEnter, MenuExit, SelectClip, PracticeSuccess;
+    public AudioSource MenuEnter, MenuExit, SelectClip, PracticeSuccess, TransitionAudio;
     public GameObject Text1, Text2, NextButton, MenuCanvas, Interactable;
     public InputActionReference activeReference = null, toggleReference = null;
 
@@ -20,12 +21,13 @@ public class ControllerTutorial : MonoBehaviour
         {
             VideoPlayer.Play();
             NowPlayVid = -1;
-            BeginWaistScene = 0;
+            CallTeleportUser = 0;
         }
 
-        if (!VideoPlayer.isPlaying && BeginWaistScene == 0)
+        if (!VideoPlayer.isPlaying && CallTeleportUser == 0)
         {
-            ActivateWaistScene.onClick.Invoke();
+            ScreenFade.TransitionNotification();
+            CallTeleportUser = -1;
         }
     }
 

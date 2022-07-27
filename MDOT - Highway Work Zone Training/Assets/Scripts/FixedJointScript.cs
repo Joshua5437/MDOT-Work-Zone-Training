@@ -4,8 +4,8 @@ using System.Collections;
 
 public class FixedJointScript : MonoBehaviour
 {
+    public float TimeToWait = 0;
     public GameObject RoadCone;
-    public Button ConnectRigidbodyButton;
     public Rigidbody ConstructionWorker;
     private float PositionX = 0, PositionY = 0, PositionZ = 0;
     private float RotationX = 0, RotationY = 0, RotationZ = 0;
@@ -27,7 +27,7 @@ public class FixedJointScript : MonoBehaviour
 
     private IEnumerator CreateFixedJoint()
     {
-        yield return new WaitForSeconds(2.25f); // Gives construction worker 2.15 seconds before attaching cone as fixed joint.
+        yield return new WaitForSeconds(TimeToWait); // Gives construction worker 2.15 seconds before attaching cone as fixed joint.
         RoadCone.GetComponent<FixedJoint>().connectedBody = ConstructionWorker;
     }
 

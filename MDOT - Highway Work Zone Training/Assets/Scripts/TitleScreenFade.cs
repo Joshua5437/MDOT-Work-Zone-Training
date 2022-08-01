@@ -5,7 +5,9 @@ using System.Collections;
 public class TitleScreenFade : MonoBehaviour
 {
     public float Duration = 1.0f;
+    public AudioSource TriggerClip;
     public RawImage WorldBlockImage;
+
     private void Awake()
     {
         var canvGroup = WorldBlockImage.GetComponent<CanvasGroup>();
@@ -23,5 +25,6 @@ public class TitleScreenFade : MonoBehaviour
             yield return null;
         }
         Destroy(WorldBlockImage);
+        TriggerClip.Play();
     }
 }

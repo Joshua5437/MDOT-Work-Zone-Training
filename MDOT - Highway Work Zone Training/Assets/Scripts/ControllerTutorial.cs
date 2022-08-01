@@ -10,20 +10,13 @@ public class ControllerTutorial : MonoBehaviour
     public TeleportUser ScreenFade;
     public Button ActivateWaistScene;
     public Sprite SelectImage, MenuImage;
-    public UnityEngine.Video.VideoPlayer VideoPlayer;
-    public AudioSource MenuEnter, MenuExit, SelectClip, PracticeSuccess, TransitionAudio;
+    public UnityEngine.Video.VideoPlayer VideoPlayer, PracticeSuccess;
+    public AudioSource MenuEnter, MenuExit, SelectClip, TransitionAudio;
     public GameObject Text1, Text2, NextButton, MenuCanvas, Interactable;
     public InputActionReference activeReference = null, toggleReference = null;
 
     private void Update()
     {
-        if (!PracticeSuccess.isPlaying && NowPlayVid == 0)
-        {
-            VideoPlayer.Play();
-            NowPlayVid = -1;
-            CallTeleportUser = 0;
-        }
-
         if (!VideoPlayer.isPlaying && CallTeleportUser == 0)
         {
             ScreenFade.TransitionNotification();
@@ -41,7 +34,7 @@ public class ControllerTutorial : MonoBehaviour
 
     public void NowPlayVideo()
     {
-        NowPlayVid = 0;
+        CallTeleportUser = 0;
     }
 
     private void Toggle(InputAction.CallbackContext context) { // Triggered by pressing 'Menu'. Introduces the select button to user. 

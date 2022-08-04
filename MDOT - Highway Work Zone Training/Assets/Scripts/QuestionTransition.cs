@@ -5,9 +5,8 @@ using System.Collections;
 
 public class QuestionTransition : MonoBehaviour
 {
-    private int counter = 0;
-    public GameObject WaistQuestion1, FloorQuestion1;
     public float Duration = 1.0f;
+    public GameObject FloorQuestion1;
     public AudioSource TransitionAudio1;
     public TextMeshProUGUI TransitionText1;
 
@@ -32,8 +31,6 @@ public class QuestionTransition : MonoBehaviour
     {
         currentAudio.Play();
         yield return new WaitWhile(() => currentAudio.isPlaying);
-
-        if (counter == 0) { WaistQuestion1.SetActive(true); }
-        else if (counter == 1) { FloorQuestion1.SetActive(true); }
+        FloorQuestion1.SetActive(true);
     }
 }

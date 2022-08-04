@@ -5,7 +5,7 @@ public class ResetWaistLift : MonoBehaviour
 {
     public Image CorrectPostureImage;
     public Sprite StartingSprite, BendDown, LiftWithLegs, Done;
-    public GameObject WaistInstructionBoard;
+    public GameObject WaistInstructionBoard, InstructionBoardBehavior;
 
     public GameObject UserScene, CinderBlock, CinderBlockSnapZone;
 
@@ -20,6 +20,7 @@ public class ResetWaistLift : MonoBehaviour
         ResetCinderBlocks();
         ResetBoardSprites();
         ResetUserInstructionBoard();
+        InstructionBoardBehavior.GetComponent<InstructionBoardBehavior>().MyUpdateTrigger();
     }
 
     private void ResetCinderBlocks()

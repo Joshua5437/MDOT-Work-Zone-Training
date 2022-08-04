@@ -1,23 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class InstructionBoardBehavior : MonoBehaviour {
-    private int count = 0;
-    private GameObject CinderBlockSnapZone;
-    private GameObject SlideButton, BendButton, LiftButton;
+    public GameObject CinderBlockSnapZone, CinderBlock;
+    public GameObject SlideButton, BendButton, LiftButton;
     public Image Image;
     public Sprite BendDown, LiftWithLegs, Done;
 
     private void Awake() {
-        SlideButton = GameObject.Find("Slide Button");
-        BendButton = GameObject.Find("Bend Button");
-        LiftButton = GameObject.Find("Lift Button");
-        CinderBlockSnapZone = GameObject.Find("Cinder Block Snap Zone");
-        SlideButton.SetActive(false);
-        BendButton.SetActive(false);
-        LiftButton.SetActive(false);
+        StartCoroutine(SetupWait());
+        StartCoroutine(MyUpdate());
+    }
+
+    public void MyUpdateTrigger()
+    {
+        StartCoroutine(MyUpdate());
         StartCoroutine(SetupWait());
     }
 
@@ -41,4 +39,23 @@ public class InstructionBoardBehavior : MonoBehaviour {
         yield return new WaitForSeconds(10);
         LiftButton.GetComponent<Button>().onClick.Invoke();
     }
+
+    IEnumerator MyUpdate()
+    {
+        float timer = 0f;
+        float time = 10f;
+        while (timer < time)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        // Here do anything that needs be done after 5s
+        if (CinderBlock.transform.localPosition.z <= 0.3850001)
+        {
+            SpriteUpdater();
+            SetupTrigger();
+            CinderBlockSnapZone.SetActive(false);
+        }
+    }
+
 }

@@ -5,11 +5,12 @@ using System.Collections;
 
 public class TeleportUser : MonoBehaviour
 {
-    private int counter = 0;
+
+    private int counter = 0, counter2 = 0;
     public TextMeshProUGUI TransitionText1, TransitionText2;
     public Image BlackScreen;
     public float Duration = 1.0f;
-    public GameObject TeleportPoint1, TeleportPoint2;
+    public GameObject TeleportPoint1, TeleportPoint2, XR_Origin;
     public AudioSource TransitionAudio1, TransitionAudio2;
     public Button button1, button2;
 
@@ -41,6 +42,8 @@ public class TeleportUser : MonoBehaviour
     {
         GameObject User = GameObject.Find("XR Origin");
         User.transform.position = new Vector3(T_Point.transform.position.x, T_Point.transform.position.y, T_Point.transform.position.z);
+        if (counter2 == 1) { XR_Origin.transform.rotation = new Quaternion(XR_Origin.transform.rotation.x, 90, XR_Origin.transform.rotation.z, 1); }
+        counter2++;
     }
 
     private IEnumerator DoFade(CanvasGroup canvGroup, float start, float end)

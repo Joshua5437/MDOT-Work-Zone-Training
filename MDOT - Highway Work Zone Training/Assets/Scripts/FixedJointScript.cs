@@ -27,7 +27,7 @@ public class FixedJointScript : MonoBehaviour
 
     private IEnumerator CreateFixedJoint()
     {
-        yield return new WaitForSeconds(TimeToWait); // Gives construction worker 2.15 seconds before attaching cone as fixed joint.
+        yield return new WaitForSeconds(TimeToWait); // Gives construction worker X seconds before attaching object as fixed joint.
         RoadCone.GetComponent<FixedJoint>().connectedBody = ConstructionWorker;
     }
 

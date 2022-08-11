@@ -8,17 +8,23 @@ public class AnimatorRootDisable : MonoBehaviour
 
     void Awake()
     {
-        StartCoroutine(rootDisableWait());
+        StartCoroutine(AnimatorDisableWait());
     }
 
-    public IEnumerator rootDisableWait()
+    public IEnumerator AnimatorDisableWait()
     {
         yield return new WaitForSeconds(7);
-        rootDisable();
+        AnimatorDisable();
     }
 
-    private void rootDisable()
+    private void AnimatorDisable()
     {
         CinderBlock.GetComponent<Animator>().enabled = false;
+    }
+
+    public void ResetAnimator()
+    {
+        CinderBlock.GetComponent<Animator>().enabled = true;
+        StartCoroutine(AnimatorDisableWait());
     }
 }

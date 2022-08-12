@@ -34,16 +34,16 @@ public class InstructionBoardBehavior : MonoBehaviour {
     }
 
     private IEnumerator AnalyzeMovementWait() {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         BendButton.GetComponent<Button>().onClick.Invoke();
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         LiftButton.GetComponent<Button>().onClick.Invoke();
     }
 
     IEnumerator MyUpdate()
     {
         float timer = 0f;
-        float time = 10f;
+        float time = 15f;
         while (timer < time)
         {
             timer += Time.deltaTime;

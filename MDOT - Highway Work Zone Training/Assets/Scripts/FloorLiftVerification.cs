@@ -120,10 +120,10 @@ public class FloorLiftVerification : MonoBehaviour
 
     private IEnumerator AnalyzeMovementWait()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         SpriteUpdater();
         BendDownButton.onClick.Invoke(); // Checks if user has bent down.
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         LiftUpButton.onClick.Invoke(); // Checks if user has lifted cone. 
     }
 

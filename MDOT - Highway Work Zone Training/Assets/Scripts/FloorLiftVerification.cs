@@ -67,19 +67,19 @@ public class FloorLiftVerification : MonoBehaviour
     {
         if (axis == 'x')
         {
-            float Rotation = Tracker.transform.rotation.x;
+            float Rotation = Tracker.transform.eulerAngles.x;
             string String_Rotation = Rotation.ToString();
             if (trackerName == 'w') { W_Start_Rot_X = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat); }
         }
         else if (axis == 'y')
         {
-            float Rotation = Tracker.transform.rotation.y;
+            float Rotation = Tracker.transform.eulerAngles.y;
             string String_Rotation = Rotation.ToString();
             if (trackerName == 'w') { W_Start_Rot_Y = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat); }
         }
         else if (axis == 'z')
         {
-            float Rotation = Tracker.transform.rotation.z;
+            float Rotation = Tracker.transform.eulerAngles.z;
             string String_Rotation = Rotation.ToString();
             if (trackerName == 'w') { W_Start_Rot_Z = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat); }
         }
@@ -89,7 +89,7 @@ public class FloorLiftVerification : MonoBehaviour
     {
         if ((Lower_Margin_Calculator(W_Start_Pos_Y) > WaistTracker.transform.position.y) && (0 < WaistTracker.transform.position.y))
         {
-            Set_Start_Pos(WaistTracker, 'y', 'w');
+            Set_Start_Pos(WaistTracker, 'y', 'w'); Set_Start_Rot(WaistTracker, 'x', 'w');
             PostureFeedback(true);
         }
         else { PostureFeedback(false); }
@@ -97,7 +97,7 @@ public class FloorLiftVerification : MonoBehaviour
 
     public void AnalysizeLiftUpStep()
     {
-        if ((Upper_Margin_Calculator(W_Start_Pos_Y) < WaistTracker.transform.position.y) && (2 > WaistTracker.transform.rotation.x) && (-2 < WaistTracker.transform.rotation.x)) { PostureFeedback(true); }
+        if ((Upper_Margin_Calculator(W_Start_Pos_Y) < WaistTracker.transform.position.y) && (Upper_Margin_Calculator(W_Start_Rot_X) > WaistTracker.transform.eulerAngles.x) && (Lower_Margin_Calculator(W_Start_Rot_X) < WaistTracker.transform.eulerAngles.x)) { PostureFeedback(true); }
         else { PostureFeedback(false); }
     }
 

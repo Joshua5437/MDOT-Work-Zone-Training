@@ -4,17 +4,28 @@ using System.Collections.Generic;
 
 public class RotateWorker : MonoBehaviour
 {
-    public GameObject ConstructionWorker;
+    private bool toggle = true, toggle2 = true;
+    public GameObject ConstructionWorker, ConstructionWorker2;
 
     void Start()
     {
         StartCoroutine(RotateConstructionWorker());
+        StartCoroutine(RotateConstructionWorker2());
     }
 
     private IEnumerator RotateConstructionWorker()
     {
-        yield return new WaitForSeconds(5);
-        ConstructionWorker.transform.rotation = new Quaternion(0, (ConstructionWorker.transform.rotation.y - 90), 0, 1);
+        yield return new WaitForSeconds(toggle ? 5 : 3);
+        ConstructionWorker.transform.eulerAngles = new Vector3(0, (ConstructionWorker.transform.eulerAngles.y - 90), 0);
+        toggle = !toggle;
         StartCoroutine(RotateConstructionWorker());
+    }
+
+    private IEnumerator RotateConstructionWorker2()
+    {
+        yield return new WaitForSeconds(toggle ? 3 : 2);
+        ConstructionWorker2.transform.eulerAngles = new Vector3(0, (ConstructionWorker2.transform.eulerAngles.y - 90), 0);
+        toggle2 = !toggle2;
+        StartCoroutine(RotateConstructionWorker2());
     }
 }

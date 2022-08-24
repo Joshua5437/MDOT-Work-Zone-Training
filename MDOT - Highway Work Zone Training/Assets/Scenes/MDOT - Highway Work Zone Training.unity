@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 5288792535148336157}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17007,8 +17007,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1764734452}
-  m_RootOrder: 6
+  m_Father: {fileID: 5288792536386863898}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &688528102
 AudioSource:
@@ -17066,7 +17066,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -49850,7 +49850,6 @@ Transform:
   - {fileID: 1353717358}
   - {fileID: 1526502830}
   - {fileID: 473559388}
-  - {fileID: 688528101}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -163099,7 +163098,6 @@ GameObject:
   - component: {fileID: 5288792535319227023}
   - component: {fileID: 5288792535319227021}
   - component: {fileID: 5288792535319227022}
-  - component: {fileID: 5288792535319227024}
   m_Layer: 0
   m_Name: Wheel_Right_Back.001
   m_TagString: Untagged
@@ -163172,19 +163170,6 @@ Transform:
   m_Father: {fileID: 5288792536386863898}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5288792535319227024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5288792535319227016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c3f1c286402184a84cf2d0e7ea99d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rot: 1
 --- !u!23 &5288792535319602394
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -265365,6 +265350,7 @@ Transform:
   - {fileID: 5288792535004852919}
   - {fileID: 5288792536518832417}
   - {fileID: 5288792535319227023}
+  - {fileID: 688528101}
   m_Father: {fileID: 5288792534760631325}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -278757,7 +278743,6 @@ GameObject:
   - component: {fileID: 5288792536518832417}
   - component: {fileID: 5288792536518832423}
   - component: {fileID: 5288792536518832416}
-  - component: {fileID: 5288792536518832424}
   m_Layer: 0
   m_Name: Wheel_Left_Back.001
   m_TagString: Untagged
@@ -278773,19 +278758,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5288792536518832418}
   m_Mesh: {fileID: 4300066, guid: adad12e002bb78f4e866ff1a17509dcb, type: 3}
---- !u!114 &5288792536518832424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5288792536518832418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c3f1c286402184a84cf2d0e7ea99d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rot: 1
 --- !u!95 &5288792536519668887
 Animator:
   serializedVersion: 4

@@ -71,7 +71,7 @@ public class MoveRoadRoller : MonoBehaviour
         {
             counter += Time.deltaTime;
             transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(0, 25, (counter / Duration)));
-            Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(34, 20, (counter / Duration)));
+            Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(48, 20, (counter / Duration)));
             yield return null;
         }
         turn = 1;

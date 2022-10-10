@@ -26,8 +26,13 @@ public class MoveRoadRoller : MonoBehaviour
         Wh5 = GameObject.Find("Wh5");
         Wh6 = GameObject.Find("Wh6");
 
-        StartCoroutine(HazardScenario2(25, 0));
+        
         // StartCoroutine(ForwardAndReverseRoadRoller(15, 0));
+    }
+
+    public void StartHazard()
+    {
+        StartCoroutine(HazardScenario2(25, 0));
     }
 
 	private void Update () {

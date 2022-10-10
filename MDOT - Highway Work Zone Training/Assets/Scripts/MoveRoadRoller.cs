@@ -39,26 +39,28 @@ public class MoveRoadRoller : MonoBehaviour
             RB_Wheel.transform.Rotate(0f, 1f, 0f, Space.Self); 
         }
 
-        else if (turn == -1)           // Turns wheels backward.
+        else if (turn == 1)           // Turns wheels backward.
         {
             Front_Wheel.transform.Rotate(0f, -1f, 0f, Space.Self); // Front wheel does not turn backwards.
             LB_Wheel.transform.Rotate(0f, -1f, 0f, Space.Self); 
             RB_Wheel.transform.Rotate(0f, -1f, 0f, Space.Self); 
         }
 
-        else
+        else if (turn == 2)
         {
             Front_Wheel.transform.Rotate(0f, -1f, 0f, Space.Self); // Front wheel does not turn backwards.
             LB_Wheel.transform.Rotate(0f, -1f, 0f, Space.Self); 
             RB_Wheel.transform.Rotate(0f, -1f, 0f, Space.Self); 
 
-            Wh1.transform.Rotate(-1f, 0f, 0f, Space.Self); 
-            Wh2.transform.Rotate(-1f, 0f, 0f, Space.Self); 
-            Wh3.transform.Rotate(-1f, 0f, 0f, Space.Self); 
-            Wh4.transform.Rotate(-1f, 0f, 0f, Space.Self); 
-            Wh5.transform.Rotate(-1f, 0f, 0f, Space.Self); 
-            Wh6.transform.Rotate(-1f, 0f, 0f, Space.Self); 
-            StartCoroutine(HazardScenario2(25, 0));
+            Wh1.transform.Rotate(1f, 0f, 0f, Space.Self); 
+            Wh2.transform.Rotate(1f, 0f, 0f, Space.Self); 
+            Wh3.transform.Rotate(1f, 0f, 0f, Space.Self); 
+            Wh4.transform.Rotate(1f, 0f, 0f, Space.Self); 
+            Wh5.transform.Rotate(1f, 0f, 0f, Space.Self); 
+            Wh6.transform.Rotate(1f, 0f, 0f, Space.Self); 
+        }
+        
+        else {
         }
     }
 
@@ -69,12 +71,13 @@ public class MoveRoadRoller : MonoBehaviour
         BackingUpAudio.Play();
         while(counter < Duration)
         {
+            turn = 2;
             counter += Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(0, 25, (counter / Duration)));
-            Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(48, 20, (counter / Duration)));
+            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(15, 19, (counter / Duration)));
+            Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(35, 30, (counter / Duration)));
             yield return null;
         }
-        turn = 1;
+        turn = -1;
         // StartCoroutine(ForwardAndReverseRoadRoller(15, 0)); // Recalls itself
     }
 
@@ -89,7 +92,7 @@ public class MoveRoadRoller : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(start, end, (counter / Duration)));
             yield return null;
         }
-        turn = -1;
+        turn = 1;
 
         counter = 0f;                   // Logic to reverse road roller.
         BackingUpAudio.Play();

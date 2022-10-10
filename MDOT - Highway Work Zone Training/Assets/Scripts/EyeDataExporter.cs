@@ -5,7 +5,6 @@ using UnityEngine;
 public class EyeDataExporter : MonoBehaviour
 {
     private string FileName = "";
-    private GameObject[] objects = new GameObject[] {};
 
     private void Start()
     {

@@ -1,4 +1,3 @@
-using Tobii.XR;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,29 +5,36 @@ using System.Collections.Generic;
 public class FocusedObject : MonoBehaviour
 {
     public AudioSource Walk;
-    public GameObject DP, RR;
+    public GameObject DP, RR, MainCamera;
     private int dumptruck = 0, roadRoller = 0;
 
-    private void Update()
+    private void Start()
     {
-        if(TobiiXR.FocusedObjects.Count > 0)
+        LookBack();
+    }
+
+    private void LookBack()
+    {
+        if(DP.transform.rotation.y == 30 && RR.transform.rotation.y == 15)
         {
-            GameObject focusedGameObject = TobiiXR.FocusedObjects[0].GameObject;
-            Debug.Log("Hello: " + focusedGameObject.name);
-            
-            if(focusedGameObject.name == "Dumptruck")
-            {
-                dumptruck = dumptruck + 1;
-            }
-            else if (focusedGameObject.name == "Road Roller")
+            if(MainCamera.transform.rotation.y <= -110) 
             {
                 roadRoller = roadRoller + 1;
             }
-        }
 
-        if(dumptruck >= 2 && roadRoller >= 2 && DP.transform.rotation.y == 30 && RR.transform.rotation.y == 15)
-        {
-            Walk.Play();
+            if(MainCamera.transform.rotation.y >= -80)
+            {
+                dumptruck = dumptruck + 1;
+            }
+
+            if(dumptruck >= 2 && roadRoller >= 2 && DP.transform.rotation.y == 30 && RR.transform.rotation.y == 15)
+            {
+                Walk.Play();
+            }
+            else
+            {
+                LookBack();
+            }
         }
     }
 }

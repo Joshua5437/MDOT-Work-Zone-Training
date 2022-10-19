@@ -7,19 +7,22 @@ public class CorrectPPE : MonoBehaviour
 {
     private int counter = 0;
 
-    [Header("Correct PPE (GameObject)")] // Assign correct PPE through the inspector
-    public Transform[] CorrectPPE;
+    // [Header("Correct PPE (GameObject)")] // Assign correct PPE through the inspector
+    public GameObject[] CorrectPPEList;
 
-    public GameObject NextScenario;
+    public GameObject CurrentScenario, NextScenario;
 
     private void Update()
     {
-        for(int i = 0; i < CorrectPPE.Length; i++)
+        for(int i = 0; i < CorrectPPEList.Length; i++)
         {
-            if(!CorrectPPE[i].activeSelf) { counter = counter + 1; }
+            if(!CorrectPPEList[i].activeSelf) { counter = counter + 1; }
         }
 
-        if(counter == CorrectPPE.Length) { NextScenario.active = true; }
-        
+        if(counter == CorrectPPEList.Length) {
+            NextScenario.active = true;
+            CurrentScenario.active = false;
+        }
+        else{ counter = 0; }
     }
 }

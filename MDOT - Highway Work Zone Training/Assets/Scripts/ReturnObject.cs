@@ -7,19 +7,17 @@ public class ReturnObject : MonoBehaviour
     private float PositionX, PositionY, PositionZ;
     private float RotationX, RotationY, RotationZ;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        // Collects the starting position of the RoadCone. 
+        // Collects the starting position of the object. 
         PositionX = transform.localPosition.x;
         PositionY = transform.localPosition.y;
         PositionZ = transform.localPosition.z;
 
-        // Collects the starting rotation of the RoadCone
+        // Collects the starting rotation of the object.
         RotationX = transform.localRotation.x;
         RotationY = transform.localRotation.y;
         RotationZ = transform.localRotation.z;
-
     }
 
     public void ReturnObjectToTable()

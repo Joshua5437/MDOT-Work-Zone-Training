@@ -9,7 +9,7 @@ public class MoveRoadRoller : MonoBehaviour
     private GameObject Wh1, Wh2, Wh3, Wh4, Wh5, Wh6;
     private GameObject LB_Wheel, RB_Wheel, Front_Wheel;
 
-    public GameObject Dumptruck, RRCube, DPCube;
+    public GameObject Dumptruck;
     public float Duration = 1.0f;
     public AudioSource BackingUpAudio;
 
@@ -83,8 +83,6 @@ public class MoveRoadRoller : MonoBehaviour
             Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(35, 30, (counter / Duration)));
             yield return null;
         }
-        DPCube.GetComponent<TestObject>().enabled = true;
-        RRCube.GetComponent<TestObject>().enabled = true;
         turn = -1;
         // StartCoroutine(ForwardAndReverseRoadRoller(15, 0)); // Recalls itself
     }

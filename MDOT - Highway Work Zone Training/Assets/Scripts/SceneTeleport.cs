@@ -9,9 +9,9 @@ public class SceneTeleport : MonoBehaviour
     private bool wait = false;
     public float Duration = 2.0f;
     public Image TransitionImage;
-    public GameObject TeleportPoint;
     public AudioSource TransitionAudio;
     public TextMeshProUGUI TransitionText;
+    public GameObject TeleportPoint, PPEBoard;
 
     public void TeleportUser()
     {
@@ -24,10 +24,12 @@ public class SceneTeleport : MonoBehaviour
         // Show transition screen.
         canvGroup = TransitionImage.GetComponent<CanvasGroup>();
         StartCoroutine(DoFade(canvGroup, 1, 0));
+        PPEBoard.active = true;
 
         //Teleport user.
         GameObject User = GameObject.Find("XR Origin");
         User.transform.position = new Vector3(TeleportPoint.transform.position.x, TeleportPoint.transform.position.y, TeleportPoint.transform.position.z);
+        User.transform.rotation = new Quaternion(TeleportPoint.transform.rotation.x, TeleportPoint.transform.rotation.y, TeleportPoint.transform.rotation.z, 1);
     }
 
     private IEnumerator DoFade(CanvasGroup canvGroup, float start, float end)

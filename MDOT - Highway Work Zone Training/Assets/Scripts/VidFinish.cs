@@ -6,32 +6,19 @@ using System.Globalization;
 
 public class VidFinish : MonoBehaviour
 {
-    private bool startUpdate = false;
     public GameObject Next, Replay;
     public UnityEngine.Video.VideoPlayer VideoPlayer;
 
-    private void Awake()
+    void Update()
     {
-        StartCoroutine(Wait3Seconds());
-    }
-
-    private void Update()
-    {
-        if (!VideoPlayer.isPlaying && startUpdate)
+        if (!VideoPlayer.isPlaying)
         {
             Next.SetActive(true);
             Replay.SetActive(true);
         }
-    }
-
-    private void StartUpdateFunction()
-    {
-        startUpdate = true;
-    }
-
-    public IEnumerator Wait3Seconds()
-    {
-        yield return new WaitForSeconds(3);
-        StartUpdateFunction();
+        else {
+            Next.SetActive(false);
+            Replay.SetActive(false);
+        }
     }
 }

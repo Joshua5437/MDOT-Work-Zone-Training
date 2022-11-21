@@ -7,8 +7,13 @@ public class MySightManager : MonoBehaviour
     public GameObject RoadRollerCube, DumptruckCube;
     private int RoadRollerCount = 0, DumptruckCount = 0;
 
-    private void getCount() {
+    public int getDPCount() {
         DumptruckCount = DumptruckCube.GetComponent<HighlightOnSight>().setCount();
+        return DumptruckCount;
+    }
+
+    public int getRRCount() {
         RoadRollerCount = RoadRollerCube.GetComponent<HighlightOnSight>().setCount();
+        return RoadRollerCount;
     }
 }

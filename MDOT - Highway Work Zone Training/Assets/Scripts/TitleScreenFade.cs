@@ -24,7 +24,6 @@ public class TitleScreenFade : MonoBehaviour
             canvGroup.alpha = Mathf.Lerp(start, end, (counter / Duration));
             yield return null;
         }
-        Destroy(WorldBlockImage);
         TriggerClip.Play();
     }
 }

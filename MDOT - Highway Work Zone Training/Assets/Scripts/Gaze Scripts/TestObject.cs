@@ -15,10 +15,8 @@ public class TestObject : MonoBehaviour, iGazeReceiver
     private void Update()
     {
         if (isGazingUpon) {
-            // Do anything you want here, we'll rotate for this demo
-            transform.Rotate(0, 3, 0);
-        } else {
-            rend.enabled = false;
+        // Do anything you want here, we'll rotate for this demo
+        transform.Rotate(0, 3, 0);
         }
     }
 

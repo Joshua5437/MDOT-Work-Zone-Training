@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Globalization;
 
 public class BodyMovementVerification : MonoBehaviour
 {
@@ -20,24 +19,21 @@ public class BodyMovementVerification : MonoBehaviour
     {
         if(!(CinderBlock.transform.position.y >= 0.96 && CinderBlock.transform.position.y <= 1.00) && Slide_Check) {
             PostureFeedback(false);
-            Success = false;
-        }
-        if (!CinderBlockSnapZone.activeSelf) {
             Slide_Check = false;
-            if(Success) {
-                PostureFeedback(true);
-                Success = false;
-            }
+        }
+        if (!CinderBlockSnapZone.activeSelf && Slide_Check) {
+            PostureFeedback(true);
+            Slide_Check = false;
         }
     }
     
     private float Upper_Margin_Calculator(float Start_Position) {
-        return (float)(Start_Position + (Start_Position * .05));
+        return (float)(Start_Position * (1.20));
     }
 
     private float Lower_Margin_Calculator(float Start_Position)
     {
-        return (float)(Start_Position - (Start_Position * .05));
+        return (float)(Start_Position * (0.80));
     }
 
     public void RemoveThisScript()
@@ -46,51 +42,17 @@ public class BodyMovementVerification : MonoBehaviour
     }
 
     private void Set_Start_Pos(GameObject Tracker, char axis, char trackerName) {
-        if (axis == 'x') {
-            float _Position = Tracker.transform.position.x;
-            string String_Position = _Position.ToString();
-            if (trackerName == 'w') {W_Start_Pos_X = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-            else if (trackerName == 'l') {L_Start_Pos_X = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-            else if (trackerName == 'r') {R_Start_Pos_X = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-        }
-        else if (axis == 'y') {
-            float _Position = Tracker.transform.position.y;
-            string String_Position = _Position.ToString();
-            if (trackerName == 'w') {W_Start_Pos_Y = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-            else if (trackerName == 'l') {L_Start_Pos_Y = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-            else if (trackerName == 'r') {R_Start_Pos_Y = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-        }
-        else if (axis == 'z') {
-            float _Position = Tracker.transform.position.z;
-            string String_Position = _Position.ToString();
-            if(trackerName == 'w') {W_Start_Pos_Z = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-            else if(trackerName == 'l') {L_Start_Pos_Z = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-            else if(trackerName == 'r') {R_Start_Pos_Z = float.Parse(String_Position, CultureInfo.InvariantCulture.NumberFormat);}
-        }
+        Vector3 TrackerPosition = Tracker.transform.localPosition;
+        W_Start_Pos_X = TrackerPosition.x;
+        W_Start_Pos_Y = TrackerPosition.y;
+        W_Start_Pos_Z = TrackerPosition.z;
     }
 
     private void Set_Start_Rot(GameObject Tracker, char axis, char trackerName) {
-        if (axis == 'x') {
-            float Rotation = Tracker.transform.eulerAngles.x;
-            string String_Rotation = Rotation.ToString();
-            if (trackerName == 'w') {W_Start_Rot_X = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-            else if (trackerName == 'l') {L_Start_Rot_X = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-            else if (trackerName == 'r') {R_Start_Rot_X = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-        }
-        else if (axis == 'y') {
-            float Rotation = Tracker.transform.eulerAngles.y;
-            string String_Rotation = Rotation.ToString();
-            if(trackerName == 'w') {W_Start_Rot_Y = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-            else if(trackerName == 'l') {L_Start_Rot_Y = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-            else if(trackerName == 'r') {R_Start_Rot_Y = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-        }
-        else if (axis == 'z') {
-            float Rotation = Tracker.transform.eulerAngles.z;
-            string String_Rotation = Rotation.ToString();
-            if(trackerName == 'w') {W_Start_Rot_Z = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-            else if(trackerName == 'l') {L_Start_Rot_Z = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-            else if(trackerName == 'r') {R_Start_Rot_Z = float.Parse(String_Rotation, CultureInfo.InvariantCulture.NumberFormat);}
-        }
+        Vector3 TrackerRotation = Tracker.transform.localEulerAngles;
+        W_Start_Rot_X = TrackerRotation.x;
+        W_Start_Rot_Y = TrackerRotation.y;
+        W_Start_Rot_Z = TrackerRotation.z;
     }
 
     public void AnalysizeSlideStep() {
@@ -99,7 +61,7 @@ public class BodyMovementVerification : MonoBehaviour
     }
 
     public void AnalysizeBendDownStep() {
-        if((Lower_Margin_Calculator(W_Start_Pos_Y) > WaistTracker.transform.position.y) && (0 < WaistTracker.transform.position.y)) {
+        if((W_Start_Pos_Y > WaistTracker.transform.localPosition.y) && (Upper_Margin_Calculator(W_Start_Rot_X)) > WaistTracker.transform.localEulerAngles.x) {
             Set_Start_Pos(WaistTracker, 'y', 'w');
             PostureFeedback(true);
         }
@@ -107,7 +69,7 @@ public class BodyMovementVerification : MonoBehaviour
     }
 
     public void AnalyzeLiftStep() {
-        if((Upper_Margin_Calculator(W_Start_Pos_Y) < WaistTracker.transform.position.y) && (Upper_Margin_Calculator(W_Start_Rot_X) > WaistTracker.transform.eulerAngles.x) && (Lower_Margin_Calculator(W_Start_Rot_X) < WaistTracker.transform.eulerAngles.x)) {PostureFeedback(true);}
+        if((W_Start_Pos_Y < WaistTracker.transform.localPosition.y) && (Upper_Margin_Calculator(W_Start_Rot_X)) > WaistTracker.transform.localEulerAngles.x) {PostureFeedback(true);}
         else{PostureFeedback(false);}  
     }
     public float Duration = 1.0f;

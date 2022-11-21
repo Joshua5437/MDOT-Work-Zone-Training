@@ -13,10 +13,9 @@ public class InstructionBoardBehavior : MonoBehaviour {
         StartCoroutine(MyUpdate());
     }
 
-    public void MyUpdateTrigger()
-    {
-        StartCoroutine(MyUpdate());
+    public void MyUpdateTrigger() {
         StartCoroutine(SetupWait());
+        StartCoroutine(MyUpdate());
     }
 
     public void SetupTrigger() {StartCoroutine(AnalyzeMovementWait());}

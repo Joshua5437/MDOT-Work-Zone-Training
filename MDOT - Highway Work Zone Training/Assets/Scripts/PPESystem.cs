@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class PPESystem : MonoBehaviour
+public class PPESystem : XRGrabInteractable
 {
     private GameObject SelectedPPE;
     private AudioSource Correct, Incorrect;
@@ -26,19 +26,13 @@ public class PPESystem : MonoBehaviour
         RotationZ = transform.localRotation.z;
     }
 
-    protected virtual void OnSelectEntered(SelectEnterEventArgs args) {
+    protected override void OnSelectEntering(SelectEnterEventArgs args) {
+        base.OnSelectEntering(args);
         if (SelectedPPE.tag == "CorrectPPE") {   // Disables correct PPE.
             Correct.Play();
             SelectedPPE.active = false;
         } else if (SelectedPPE.tag == "IncorrectPPE") {  // Plays incorrect audio.
             Incorrect.Play();
-        }
-    }
-
-    protected virtual void OnSelectExited(SelectExitEventArgs args) {
-        if(SelectedPPE.tag == "IncorrectPPE") {   // Returns incorrect PPE to table. 
-            transform.localPosition = new Vector3(PositionX, PositionY, PositionZ);
-            transform.localRotation = Quaternion.Euler(RotationX, RotationY, RotationZ);
         }
     }
 }

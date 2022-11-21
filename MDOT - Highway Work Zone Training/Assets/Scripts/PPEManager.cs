@@ -18,8 +18,10 @@ public class PPEManager : MonoBehaviour
             NextScene.active = true;
             CurrentScene.active = false;
 
-            if(NextScene.name == "Hazard Scenario 2") {
+            if(NextScene.name == "Hazard Scenario 1") {
                 NextScene.GetComponent<SceneTeleport>().TeleportUser();
+            } else {
+                CurrentScene.GetComponent<SceneTeleport>().TeleportUser();
             }
         }
         else { counter = 0; }

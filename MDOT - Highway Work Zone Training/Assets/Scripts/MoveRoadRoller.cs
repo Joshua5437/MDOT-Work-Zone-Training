@@ -6,10 +6,12 @@ using System.Collections.Generic;
 public class MoveRoadRoller : MonoBehaviour
 {
     public int turn = 0;
+    private bool rendFlag = true;
+    private bool isGazingUpon;
     private GameObject Wh1, Wh2, Wh3, Wh4, Wh5, Wh6;
     private GameObject LB_Wheel, RB_Wheel, Front_Wheel;
 
-    public GameObject Dumptruck;
+    public GameObject Dumptruck, RRCube, DPCube;
     public float Duration = 1.0f;
     public AudioSource BackingUpAudio;
 
@@ -65,6 +67,10 @@ public class MoveRoadRoller : MonoBehaviour
             Wh6.transform.Rotate(1f, 0f, 0f, Space.Self); 
         }
         
+        if (isGazingUpon) {
+            StopAllCoroutines();
+        }
+        
         else {
         }
     }
@@ -79,13 +85,18 @@ public class MoveRoadRoller : MonoBehaviour
         {
             turn = 2;
             counter += Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(15, 19, (counter / Duration)));
-            Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(35, 30, (counter / Duration)));
+            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(10, 15, (counter / Duration)));
+            Dumptruck.transform.position = new Vector3(Dumptruck.transform.position.x, Dumptruck.transform.position.y, Mathf.Lerp(40, 35, (counter / Duration)));
             yield return null;
         }
+        DPCube.GetComponent<TestObject>().enabled = true;
+        RRCube.GetComponent<TestObject>().enabled = true;
         turn = -1;
         // StartCoroutine(ForwardAndReverseRoadRoller(15, 0)); // Recalls itself
     }
+
+    public void GazingUpon() { isGazingUpon = true; }
+    public void NotGazingUpon() { isGazingUpon = false; }
 
     /*
     public IEnumerator ForwardAndReverseRoadRoller(float start, float end)

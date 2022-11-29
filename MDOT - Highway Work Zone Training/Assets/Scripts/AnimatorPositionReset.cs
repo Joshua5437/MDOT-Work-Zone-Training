@@ -2,21 +2,18 @@ using UnityEngine;
 
 public class AnimatorPositionReset : MonoBehaviour
 {
-    
+
     public GameObject AnimatedObject;
+    private Vector3 ObjectPosition, ObjectRotation;
 
-    [Header("Object Position (Transform)")]
-    public float PositionX;
-    public float PositionY;
-    public float PositionZ;
-
-    [Header("Object Rotation (Transform)")]
-    public float RotationX;
-    public float RotationY;
-    public float RotationZ;
+    private void Start()
+    {
+        ObjectPosition = AnimatedObject.transform.localPosition;
+        ObjectRotation = AnimatedObject.transform.localEulerAngles;
+    }
 
     public void PositionReset() {
-        AnimatedObject.transform.localPosition = new Vector3(PositionX, PositionY, PositionZ);
-        AnimatedObject.transform.localRotation = Quaternion.Euler(RotationX, RotationY, RotationZ);
+        AnimatedObject.transform.localPosition = ObjectPosition;
+        AnimatedObject.transform.localRotation = Quaternion.Euler(ObjectRotation.x, ObjectRotation.y, ObjectRotation.z);
     }
 }

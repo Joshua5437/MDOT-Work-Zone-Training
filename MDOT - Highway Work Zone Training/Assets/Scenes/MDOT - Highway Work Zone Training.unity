@@ -21421,8 +21421,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -24186,8 +24186,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -33709,12 +33709,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 1032606289}
-  PositionX: 0.06999999
-  PositionY: 0.406
-  PositionZ: 45.17401
-  RotationX: 89.98
-  RotationY: 90
-  RotationZ: 0
 --- !u!33 &1032606296
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34408,8 +34402,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -37343,8 +37337,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -58280,8 +58274,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -61957,8 +61951,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -66828,7 +66822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887690966}
   m_LocalRotation: {x: -0, y: -0.70273453, z: -0, w: 0.7114522}
-  m_LocalPosition: {x: 47.01005, y: 0, z: 48.560047}
+  m_LocalPosition: {x: 47.016, y: 0, z: 49.039}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68312,9 +68306,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 781261336}
+      - m_Target: {fileID: 781261338}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: 
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -69907,8 +69901,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
-  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -77429,8 +77423,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
-  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -78684,7 +78678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111020836}
   m_LocalRotation: {x: -0, y: -0.70273453, z: -0, w: 0.7114522}
-  m_LocalPosition: {x: 47.01, y: -0.000000059604645, z: 48.56}
+  m_LocalPosition: {x: 47.016, y: -0.000000059604645, z: 49.039}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -114095,12 +114089,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 4247452210868260679}
-  PositionX: 0.06999999
-  PositionY: 0.406
-  PositionZ: 45.17401
-  RotationX: 89.98
-  RotationY: 90
-  RotationZ: 0
 --- !u!65 &4247452210868260687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -127070,12 +127058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 5103136581854156065}
-  PositionX: -0.065
-  PositionY: 0
-  PositionZ: 0.45
-  RotationX: 0
-  RotationY: -90
-  RotationZ: 0
 --- !u!1 &5103260225218552962
 GameObject:
   m_ObjectHideFlags: 0
@@ -348912,12 +348894,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 6298834175343251596}
-  PositionX: 0.001
-  PositionY: 0
-  PositionZ: -0.92
-  RotationX: 0
-  RotationY: 90
-  RotationZ: 0
 --- !u!54 &6298834175343251598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -351627,12 +351603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 6813555273258982375}
-  PositionX: 0.633
-  PositionY: 1.313
-  PositionZ: -0.9
-  RotationX: 0
-  RotationY: 90
-  RotationZ: 0
 --- !u!114 &6813555273258982382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365822,12 +365792,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 8136212191692439684}
-  PositionX: -6.87
-  PositionY: 0.337
-  PositionZ: 23.67
-  RotationX: 0
-  RotationY: 0
-  RotationZ: 0
 --- !u!137 &8909767216711305306
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -366639,12 +366603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 9004938797735265269}
-  PositionX: -0.05
-  PositionY: 0
-  PositionZ: 0
-  RotationX: 0
-  RotationY: 5.584
-  RotationZ: 0
 --- !u!54 &9004938797735265271
 Rigidbody:
   m_ObjectHideFlags: 0

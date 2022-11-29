@@ -16,7 +16,10 @@ public class buttonPress : MonoBehaviour
         BackUpOne = One;
         BackUpTwo = Two;
         BackUpThree = Three;
+    }
 
+    private void Start()
+    {
         One.onClick.Invoke();
         One = Two;
         Two = Three;

@@ -8,7 +8,6 @@ public class FloorLiftVerification : MonoBehaviour
     public float Duration = 1.0f;
     public GameObject WaistTracker;
     public AudioSource Correct, Incorrect;
-    private bool CorrectBend = true;
     private float W_Start_Pos_X = 0, W_Start_Pos_Y = 0, W_Start_Pos_Z = 0;
     private float W_Start_Rot_X = 0, W_Start_Rot_Y = 0, W_Start_Rot_Z = 0;
 
@@ -65,14 +64,13 @@ public class FloorLiftVerification : MonoBehaviour
         }
         else
         {
-            CorrectBend = false;
             PostureFeedback(false);
         }
     }
 
     public void AnalysizeLiftUpStep()
     {
-        if (W_Start_Pos_Y < WaistTracker.transform.localPosition.y && (Upper_Margin_Calculator(W_Start_Rot_X) > WaistTracker.transform.localEulerAngles.x) && CorrectBend) { PostureFeedback(true); }
+        if (W_Start_Pos_Y < WaistTracker.transform.localPosition.y && (Upper_Margin_Calculator(W_Start_Rot_X) > WaistTracker.transform.localEulerAngles.x)) { PostureFeedback(true); }
         else { PostureFeedback(false); }
     }
 

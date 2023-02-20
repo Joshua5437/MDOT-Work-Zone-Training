@@ -18,7 +18,7 @@ public class CameraScript : MonoBehaviour
         if (WebCamTexture.devices.Length > 0)
         {
             currentCamIndex += 1;
-            currentCamIndex -= WebCamTexture.devices.Length;
+            currentCamIndex %= WebCamTexture.devices.Length;
 
             // If tex is not null
             // stop the webcam

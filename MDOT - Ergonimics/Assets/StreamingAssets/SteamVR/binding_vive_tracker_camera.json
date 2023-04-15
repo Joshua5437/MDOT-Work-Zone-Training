@@ -1,0 +1,19 @@
+{
+  "controller_type": "vive_tracker_camera",
+  "description": "",
+  "name": "tracker_forcamera",
+  "bindings": {
+    "/actions/mixedreality": {
+      "chords": [],
+      "sources": [],
+      "poses": [
+        {
+          "output": "/actions/mixedreality/in/ExternalCamera",
+          "path": "/user/camera/pose/raw"
+        }
+      ],
+      "haptics": [],
+      "skeleton": []
+    }
+  }
+}

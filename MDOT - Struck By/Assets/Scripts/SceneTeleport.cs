@@ -26,7 +26,8 @@ public class SceneTeleport : MonoBehaviour
         // Tell & show the user the section they are about to go to.
         canvGroup = TransitionText.GetComponent<CanvasGroup>();
         wait = true;
-        TransitionAudio.Play();                    // Verbal 
+        if (TransitionAudio != null)
+            TransitionAudio.Play();                    // Verbal 
         StartCoroutine(DoFade(canvGroup, 1, 0));   // Visual  
     }
 
@@ -39,8 +40,9 @@ public class SceneTeleport : MonoBehaviour
             canvGroup.alpha = Mathf.Lerp(start, end, (counter / Duration));
             yield return null;
         }
-        if(wait) { 
-            yield return new WaitWhile(() => TransitionAudio.isPlaying);
+        if(wait) {
+            if (TransitionAudio != null)
+                yield return new WaitWhile(() => TransitionAudio.isPlaying);
             startingObject.active = true;
         }
         

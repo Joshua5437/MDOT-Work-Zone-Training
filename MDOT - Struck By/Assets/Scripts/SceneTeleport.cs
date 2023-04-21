@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 
 public class SceneTeleport : MonoBehaviour
 {
@@ -43,8 +42,7 @@ public class SceneTeleport : MonoBehaviour
         if(wait) {
             if (TransitionAudio != null)
                 yield return new WaitWhile(() => TransitionAudio.isPlaying);
-            startingObject.active = true;
+            startingObject.SetActive(true);
         }
-        
     }
 }

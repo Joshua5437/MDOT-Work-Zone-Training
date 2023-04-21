@@ -8,6 +8,7 @@ public class ControllerTutorial : MonoBehaviour
     private int ToggleCounter = 0, ActiveCounter = 0, NowPlayVid = -1, CallTeleportUser = -1;
     public Image Image;
     public SceneTeleport LecturePPE;
+    public UICross2Check UIFix;
     public Button ActivateWaistScene;
     public Sprite SelectImage, MenuImage;
     public UnityEngine.Video.VideoPlayer VideoPlayer, PracticeSuccess;
@@ -20,6 +21,7 @@ public class ControllerTutorial : MonoBehaviour
         if (!VideoPlayer.isPlaying && CallTeleportUser == 0)
         {
             LecturePPE.TeleportUser();
+            UIFix.taskComplete();
             CallTeleportUser = -1;
         }
     }

@@ -984,6 +984,7 @@ GameObject:
   - component: {fileID: 44209578}
   - component: {fileID: 44209577}
   - component: {fileID: 44209576}
+  - component: {fileID: 44209579}
   m_Layer: 0
   m_Name: Next Button
   m_TagString: Untagged
@@ -1128,6 +1129,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 44209579}
+        m_TargetAssemblyTypeName: UICross2Check, Assembly-CSharp
+        m_MethodName: taskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &44209577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,6 +1179,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44209574}
   m_CullTransparentMesh: 1
+--- !u!114 &44209579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44209574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd65b09133bcee4bbcbcac99c9aaca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects:
+  - {fileID: 1822399549}
+  deactiveObjects:
+  - {fileID: 1647825916}
 --- !u!1 &48359781
 GameObject:
   m_ObjectHideFlags: 0
@@ -11521,6 +11550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492545838}
   - component: {fileID: 492545839}
+  - component: {fileID: 492545840}
   m_Layer: 0
   m_Name: PPE Scene
   m_TagString: Untagged
@@ -11564,6 +11594,24 @@ MonoBehaviour:
   TransitionText: {fileID: 112656867}
   TeleportPoint: {fileID: 772066868}
   startingObject: {fileID: 2111020836}
+--- !u!114 &492545840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492545837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd65b09133bcee4bbcbcac99c9aaca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects:
+  - {fileID: 9128426804773714617}
+  - {fileID: 1350621677}
+  deactiveObjects:
+  - {fileID: 9128426805483625976}
+  - {fileID: 1706624318}
 --- !u!1 &493267264
 GameObject:
   m_ObjectHideFlags: 0
@@ -24984,6 +25032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1028434039}
   - component: {fileID: 1028434040}
+  - component: {fileID: 1028434041}
   m_Layer: 0
   m_Name: Lecture PPR
   m_TagString: Untagged
@@ -25028,6 +25077,26 @@ MonoBehaviour:
   TransitionText: {fileID: 112656867}
   TeleportPoint: {fileID: 772066868}
   startingObject: {fileID: 77815374}
+--- !u!114 &1028434041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028434038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd65b09133bcee4bbcbcac99c9aaca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects:
+  - {fileID: 9128426805719233253}
+  - {fileID: 1822399549}
+  - {fileID: 2069213985}
+  deactiveObjects:
+  - {fileID: 9128426806232772872}
+  - {fileID: 1647825916}
+  - {fileID: 1091167730}
 --- !u!1 &1029325147
 GameObject:
   m_ObjectHideFlags: 0
@@ -26679,7 +26748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Check Understanding
+  m_text: '    Check Understanding
 
 '
   m_isRightToLeft: 0
@@ -43031,6 +43100,7 @@ GameObject:
   - component: {fileID: 1718174412}
   - component: {fileID: 1718174411}
   - component: {fileID: 1718174410}
+  - component: {fileID: 1718174414}
   m_Layer: 0
   m_Name: Next Button
   m_TagString: Untagged
@@ -43106,6 +43176,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1718174414}
+        m_TargetAssemblyTypeName: UICross2Check, Assembly-CSharp
+        m_MethodName: taskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1718174411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43165,6 +43247,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0.753, y: -0.468}
   m_SizeDelta: {x: 0.9, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1718174414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718174409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd65b09133bcee4bbcbcac99c9aaca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects:
+  - {fileID: 705259821}
+  deactiveObjects:
+  - {fileID: 207004840}
 --- !u!1 &1719346371
 GameObject:
   m_ObjectHideFlags: 0
@@ -45796,6 +45894,7 @@ MonoBehaviour:
   CorrectPPE:
   - {fileID: 1200412929}
   - {fileID: 139783151}
+  UIFix: {fileID: 492545840}
   CurrentScene: {fileID: 1887690966}
   NextScene: {fileID: 1951678963}
 --- !u!1 &1888734345
@@ -56509,6 +56608,7 @@ MonoBehaviour:
   CorrectPPE:
   - {fileID: 2559263254766506564}
   - {fileID: 7581572157001559677}
+  UIFix: {fileID: 0}
   CurrentScene: {fileID: 2111020836}
   NextScene: {fileID: 1887690966}
 --- !u!1 &2111556896
@@ -57314,6 +57414,7 @@ GameObject:
   - component: {fileID: 2140504284}
   - component: {fileID: 2140504283}
   - component: {fileID: 2140504282}
+  - component: {fileID: 2140504285}
   m_Layer: 0
   m_Name: Next Button
   m_TagString: Untagged
@@ -57434,6 +57535,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2140504285}
+        m_TargetAssemblyTypeName: UICross2Check, Assembly-CSharp
+        m_MethodName: taskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2140504283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57472,6 +57585,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140504280}
   m_CullTransparentMesh: 1
+--- !u!114 &2140504285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140504280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd65b09133bcee4bbcbcac99c9aaca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects:
+  - {fileID: 270375589}
+  deactiveObjects:
+  - {fileID: 1033959642}
 --- !u!1 &2141871120
 GameObject:
   m_ObjectHideFlags: 0
@@ -68218,6 +68347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 4439349208032224993}
   LecturePPE: {fileID: 1028434040}
+  UIFix: {fileID: 1028434041}
   ActivateWaistScene: {fileID: 2034196135581306778}
   SelectImage: {fileID: 21300000, guid: efa197d99a165c94888831adcd0f3829, type: 3}
   MenuImage: {fileID: 21300000, guid: 94b33208965a2f54fb2834d0ba94a398, type: 3}
@@ -72055,6 +72185,18 @@ MonoBehaviour:
           m_StringArgument: Q4
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 4669743418317106135}
+        m_TargetAssemblyTypeName: UICross2Check, Assembly-CSharp
+        m_MethodName: taskComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!224 &4669743418317106133
 RectTransform:
   m_ObjectHideFlags: 0
@@ -72088,6 +72230,7 @@ GameObject:
   - component: {fileID: 4669743418317106130}
   - component: {fileID: 4669743418317106131}
   - component: {fileID: 4669743418317106132}
+  - component: {fileID: 4669743418317106135}
   m_Layer: 5
   m_Name: Yes Button
   m_TagString: Untagged
@@ -72095,6 +72238,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4669743418317106135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669743418317106134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd65b09133bcee4bbcbcac99c9aaca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects:
+  - {fileID: 302370403}
+  deactiveObjects:
+  - {fileID: 567338298}
 --- !u!1 &4669743418319383488
 GameObject:
   m_ObjectHideFlags: 0
